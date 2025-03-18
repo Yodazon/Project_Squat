@@ -56,8 +56,8 @@ export default function App(){
                         const bluetoothConnectStatus = await PermissionsAndroid.request(
                             PermissionsAndroid.PERMISSIONS.BLUETOOTH_CONNECT,
                             {
-                                title: 'Bluetooth COnnect Permission',
-                                message: 'THis app requires bluetooth connection permission to connect to devices',
+                                title: 'Bluetooth Connect Permission',
+                                message: 'This app requires bluetooth connection permission to connect to devices',
                                 buttonPositive: 'OK',
                             }
                         );

@@ -33,9 +33,8 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="myapp"/>
-        <data android:scheme="com.anonymous.projectsquat"/>
-        <data android:scheme="exp+project-squat"/>
+        <data android:scheme="com.anonymous.expoblesample"/>
+        <data android:scheme="exp+expo-ble-sample"/>
       </intent-filter>
     </activity>
   </application>
