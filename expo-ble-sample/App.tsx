@@ -24,7 +24,13 @@ export default function App(){
     const [controlValue, setControlValue] = useState<number>(0)
 
     useEffect(() =>{
+
+        let isMounted = true; // Track whether component is mounted
+            
+
+
         const checkPermissions = async (): Promise<void> =>{
+            if (!isMounted) return;
             if (ExpoDevice.osName !== 'Android' && ExpoDevice.osName !== 'iOS'){
                 alert('BLE only allowed on iOS and Android')
                 return;
@@ -99,6 +105,8 @@ export default function App(){
         checkPermissions();
         
         return () =>{
+            isMounted = false; // Prevent running if unmounted
+
             //Clean up BLE resources when component unmounts
             if (connectedDevice){
                 bleManager.cancelDeviceConnection(connectedDevice.id)
@@ -123,9 +131,9 @@ export default function App(){
             }
             
             //add devices with names
-            if(device && device.name){
+            if(device && device.name?.includes("Arduino")){
                 //Check if it is already on the list
-                setDevices(prevDevices =>{
+                setDevices(prevDevices  =>{
                     if (!prevDevices.find(d => d.id === device.id)){
                         return [...prevDevices, device]
                     }
