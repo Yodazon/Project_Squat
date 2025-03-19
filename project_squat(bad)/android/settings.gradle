@@ -21,7 +21,7 @@ extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
   }
 }
 
-rootProject.name = 'expo-ble-sample'
+rootProject.name = 'project-squat'
 
 dependencyResolutionManagement {
   versionCatalogs {
